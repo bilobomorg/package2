@@ -22,9 +22,12 @@ jobs:
           always-auth: true
           # Defaults to the user or organization that owns the workflow file
           scope: '@bilobom'
+      - name: Setup .yarnrc.yml
+        run: |
+          yarn config set npmScopes.bilobom.npmRegistryServer "https://npm.pkg.github.com"
+          yarn config set npmScopes.bilobom.npmAlwaysAuth true
+          yarn config set npmScopes.bilobom.npmAuthToken $NPM_AUTH_TOKEN
+          env:
+            NPM_AUTH_TOKEN: ${{ secrets.YARN_TOKEN }}
       - run: yarn install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.token }}
       - run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.token }}
