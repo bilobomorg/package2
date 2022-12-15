@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
+          always-auth: true
           # Defaults to the user or organization that owns the workflow file
           scope: '@bilobom'
       - run: yarn install
