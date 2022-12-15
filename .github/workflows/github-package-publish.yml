@@ -3,8 +3,9 @@
 
 name: Publish @bilobom/package2 to GitHub Packages
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest 
