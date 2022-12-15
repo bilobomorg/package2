@@ -23,6 +23,8 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@bilobom'
       - run: yarn install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.token }}
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.token }}
