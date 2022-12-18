@@ -22,6 +22,8 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@bilobomorg'
       - run: npm install
-      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.INTERTWINE_TOKEN }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
