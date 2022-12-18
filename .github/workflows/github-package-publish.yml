@@ -1,7 +1,7 @@
 # this file is derived from the following docs: 
 # https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Publish @bilobom/package2 to GitHub Packages
+name: Publish @bilobomorg/package2 to GitHub Packages
 on:
   push:
     branches:
@@ -20,7 +20,7 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
-          scope: '@bilobom'
+          scope: '@bilobomorg'
       - run: npm install
       - run: npm publish
         env:
