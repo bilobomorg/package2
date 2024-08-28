@@ -19,7 +19,8 @@
   },
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "test": "jest"
   },
   "peerDependencies": {
     "react": "^17.0.2",
