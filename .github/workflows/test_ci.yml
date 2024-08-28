@@ -1,0 +1,26 @@
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main  # Adjust this to your default branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Use the Node.js version your project requires
+
+      - name: Install dependencies
+        run: yarn install  # Use 'yarn install' since you mentioned using Yarn
+
+      - name: Run tests
+        run: yarn test  # This should match the script command defined in your package.json
